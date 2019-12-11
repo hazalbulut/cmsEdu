@@ -2,7 +2,7 @@
     <mat-sidenav
         #sidenav
         class="app-sidenav mat-elevation-z15"
-        [opened]="isScreenSmall()"
+        [opened]="!isScreenSmall()"
         color="primary"
         [mode]="isScreenSmall() ? 'over' : 'side'"
     >
