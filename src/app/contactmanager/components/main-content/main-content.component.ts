@@ -15,6 +15,7 @@ export class MainContentComponent implements OnInit {
     constructor(private route: ActivatedRoute, private service: UserService) { }
 
     public ngOnInit() {
+
         this.route.params.subscribe(params => {
             let id = params.id;
             if (!id) {
@@ -29,6 +30,7 @@ export class MainContentComponent implements OnInit {
                 setTimeout(() => {
                     this.user = this.service.userById(Number(id));
                 }, 500);
+
             });
 
         });
