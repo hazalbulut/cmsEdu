@@ -8,12 +8,14 @@ const SMALL_WIDTH_BREAKPOINT = 720;
 @Component({
     selector: 'app-sidenav',
     templateUrl: './sidenav.component.html',
-    styleUrls: ['./sidenav.component.css']
+    styleUrls: ['./sidenav.component.scss']
 })
 export class SidenavComponent implements OnInit {
     private mediaMatcher: MediaQueryList = matchMedia(`(max-width:${SMALL_WIDTH_BREAKPOINT}px)`);
 
     public users: Observable<User[]>;
+    public isDarkTheme: boolean = false;
+    public dir: string = 'ltr';
 
     constructor(zone: NgZone, private userService: UserService, private router: Router) {
 
@@ -33,8 +35,20 @@ export class SidenavComponent implements OnInit {
             }
         });
     }
+
     public isScreenSmall() {
 
         return this.mediaMatcher.matches;
+    }
+    public toggleTheme() {
+        this.isDarkTheme = !this.isDarkTheme;
+
+    }
+    public toggleDir() {
+        this.dir = this.dir === 'ltr' ? 'rtl' : 'ltr';
+        this.sidenav.toggle().then(() => {
+            this.sidenav.toggle();
+        });
+
     }
 }

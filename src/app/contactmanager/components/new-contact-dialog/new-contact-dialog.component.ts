@@ -7,7 +7,7 @@ import { UserService } from '../../services/user.service';
 @Component({
     selector: 'app-new-contact-dialog',
     templateUrl: './new-contact-dialog.component.html',
-    styleUrls: ['./new-contact-dialog.component.css']
+    styleUrls: ['./new-contact-dialog.component.scss']
 })
 export class NewContactDialogComponent implements OnInit {
     public avatars = ['svg-1', 'svg-2', 'svg-3', 'svg-4'];

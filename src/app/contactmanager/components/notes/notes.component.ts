@@ -6,7 +6,7 @@ import { MatSort } from '@angular/material/sort';
 @Component({
     selector: 'app-notes',
     templateUrl: './notes.component.html',
-    styleUrls: ['./notes.component.css']
+    styleUrls: ['./notes.component.scss']
 })
 
 
